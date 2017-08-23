@@ -1,5 +1,5 @@
 ### Setup
-  * Fork, clone, yarn install, yarn start
+  *- Fork, clone, yarn install, yarn start
 ### Let's fetch users
   * Go to this URL in your browser, https://jsonplaceholder.typicode.com/users
   * Study the JSON format to understand what type of data it returns
