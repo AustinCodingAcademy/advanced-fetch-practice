@@ -1,7 +1,7 @@
 
-function usersRetrieved(response) {
-  return response.json();
-}
+// function usersRetrieved(response) {
+//   return response.json();
+// }
 function userJSONReady(users) {
   const usersDiv = document.getElementById("users");
   let usersHTML = "";
@@ -12,3 +12,25 @@ function userJSONReady(users) {
   usersDiv.innerHTML = (usersHTML);
 }
 
+function commentJSONReady(comments) {
+  const commentsDiv = document.getElementById("comments");
+  let commentsHTML = "";
+  for (let i = 0; i < comments.length; i++) {
+    const comment = comments[i];
+    commentsHTML += "<div>" + comment.name + "</div>";
+  }
+  commentsDiv.innerHTML = (commentsHTML);
+}
+
+fetch("https://jsonplaceholder.typicode.com/users")
+.then((response) => response.json())
+.then(userJSONReady);
+
+// const usersPromise = fetch("https://jsonplaceholder.typicode.com/users");
+// const userJsonPromise = usersPromise.then(usersRetrieved);
+// userJsonPromise.then(userJSONReady);
+
+
+fetch("https://jsonplaceholder.typicode.com/comments")
+.then((response) => response.json())
+.then(commentJSONReady);
